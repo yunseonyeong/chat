@@ -1,0 +1,53 @@
+{
+  "name": "sleact-ts-front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env TS_NODE_PROJECT=\\\"tsconfig-for-webpack-config.json\\\" webpack serve --env development",
+    "build": "cross-env TS_NODE_PROJECT=\\\"tsconfig-for-webpack-config.json\\\" NODE_ENV=production webpack"
+  },
+  "author": "ZeroCho",
+  "license": "MIT",
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@loadable/component": "^5.15.2",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.1",
+    "axios": "^0.26.1",
+    "core-js": "^3.15.1",
+    "cross-env": "^7.0.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^6.3.0",
+    "swr": "^1.3.0",
+    "typescript": "^4.4.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.8",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.0-rc.0",
+    "@types/fork-ts-checker-webpack-plugin": "^0.4.5",
+    "@types/loadable__component": "^5.13.4",
+    "@types/node": "^16.11.26",
+    "@types/webpack": "^5.28.0",
+    "@types/webpack-dev-server": "^4.0.3",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "eslint": "^8.13.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "fork-ts-checker-webpack-plugin": "^7.2.3",
+    "prettier": "^2.2.1",
+    "react-refresh": "^0.12.0",
+    "style-loader": "^3.2.1",
+    "ts-node": "^10.0.0",
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^4.0.0"
+  }
+}
