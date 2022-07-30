@@ -8,7 +8,9 @@ import fetcher from '@utils/fetcher';
 
 const LogIn = () => {
   //swr 장점 : 로딩 상태도 알 수 있다. 데이터가 존재하지 않으면(undefined) 로딩중임을 알 수 있음
-  const { data, error } = useSWR('http://localhost:3095/api/users', fetcher); // 로그인 후 저장할 데이터, 해당 url을 fetcher로 옮겨준다.
+  const { data, error, mutate } = useSWR('http://localhost:3095/api/users', fetcher, {
+    dedupingInterval: 100000,
+  }); // 로그인 후 저장할 데이터, 해당 url을 fetcher로 옮겨준다.
   const [email, , onChangeEmail] = useInput('');
   const [password, , onChangePassword] = useInput('');
   const [loginError, setLoginError] = useState(false);
@@ -29,7 +31,10 @@ const LogIn = () => {
             withCredentials: true,
           },
         )
-        .then((response) => {})
+        .then((response) => {
+          // swr최신버전에서 revalidate 가 사라졌다. mutate가 대체한다.
+          mutate();
+        })
         .catch((error) => {
           setLoginError(error.response?.status === 401);
         })
