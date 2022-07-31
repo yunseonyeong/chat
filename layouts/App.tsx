@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 // npm i --save-dev @types/loadable__component
 const LogIn = loadable(() => import('@pages/LogIn'));
 const SignUp = loadable(() => import('@pages/SignUp'));
+const Channel = loadable(() => import('@pages/Channel'));
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/" element={<LogIn />}></Route>
         <Route path="/login" element={<LogIn />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="/workspace/channel" element={<Channel />}></Route>
       </Routes>
     </>
   );
